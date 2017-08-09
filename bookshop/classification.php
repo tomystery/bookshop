@@ -1,0 +1,287 @@
+<?php
+session_start();
+include "func.php";
+
+?>
+<!DOCTYPE html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>商品分类</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/classification.css"/>
+    <link rel="stylesheet" href="iconfont/iconfont.css"/>
+    <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+</head>
+
+<!--头部-->
+<!--头部相同的部分开始-->
+<!--头部-->
+<div id="hd">
+    <div class="hd_wrap">
+        <?php
+        if(isset($_SESSION['username'])){
+            $username=$_SESSION['username'];
+            $userid=$_SESSION["userid"];
+            ?>
+            <div class="hi">hi,
+                <a href="index.php">
+                    <b><?php echo $username ?></b>
+                </a>
+                <a name="logOut" href="exit.php" class="out" target="_self">[退出]</a>
+
+            </div>
+        <?php } else {?>
+            <div class="hd_welcome">
+            <span id="nickname">欢迎光临书城，请
+              <a href="login.php" target="_blank">登录</a>成为会员
+            </span>
+            </div>
+        <?php } ?>
+    </div>
+</div>
+<!--二级导航开始-->
+<div class="logo_wrap">
+    <div class="logo">
+        <img src="img/main/logo.png">
+        <div class="search">
+            <input type="text" class="searchText" placeholder="作品、作者、出版社"/>
+            <span type="button" value="提交"  class="searchBtn"></span>
+        </div>
+        <?php
+        $str="select * from cart where usersid=$userid";
+        $result= mysql_query($str);
+        $num=0;
+
+        while($rs=mysql_fetch_assoc($result)){
+            $num=$num+$rs['num'];
+        }
+        ?>
+
+        <ul>
+            <li><a href="shoppingcar.php" class="car "><i class="iconfont">&#xe632;</i>购物车
+                    <b class="car_count"> <?php echo $num ?></b></a></li>
+
+
+            <li><a href="javascript:void(0)" class="myOrder"><i class="iconfont">&#xe61a;</i>我的订单</a></li>
+            <li><a href="javascript:void(0)" class="myCenter "><i class="iconfont">&#xe603;</i>用户中心</a></li>
+        </ul>
+    </div>
+</div>
+<!--三级导航开始-->
+<div class="nav_wrap">
+    <div class="nav"></div>
+</div>
+<!--三级导航结束-->
+<!--头部相同的部分结束-->
+<div class="center">
+    <div class="navigation"></div>
+    <div class="classification_list clearfix">
+        <!--左边导航栏开始-->
+        <div class="left">
+            <?php
+            $sql="select * from cate";
+            $result=mysql_query($sql);
+           while($arr=mysql_fetch_assoc($result)) {
+               ?>
+               <a href="javascript:void(0)" ><h3><?php echo $arr['catename'] ?></h3></a>
+
+
+               <?php }
+            ?>
+        </div>
+        <!--左边导航栏结束-->
+        <!--右边内容开始-->
+        <div class="right clearfix">
+            <div class="right_nav"></div>
+            <div class="book_list clearfix">
+                <?php
+                $styleid = $_REQUEST['id'];
+                $str="select * from goods where cateid = $styleid order by id desc  ";
+                $result = mysql_query($str);
+                while($rs = mysql_fetch_object($result)) {
+                    ?>
+                    <!--第一本书开始-->
+                    <a class="clearfix" href="detail.php?id=<?php echo $rs->id ?>" >
+                    <span class="bookCover">
+                        <img src="<?php echo $rs->image2 ?>"/>
+                    </span>
+
+                        <div class="bookInfo">
+                            <div class="title"><?php echo $rs->name ?></div>
+                            <div class="author"><?php echo $rs->author ?></div>
+                            <div class="starts"></div>
+                            <div class="price"><span class="now">￥<?php echo $rs->nowprice ?></span> </div>
+                            <div class="desc">
+                                <?php echo $rs->contents ?>
+                            </div>
+
+                        </div>
+                    </a>
+                    <?php
+                }
+                ?>
+            </div>
+
+        </div>
+        <!--右边内容结束-->
+
+    </div>
+</div>
+
+<!--底部和index相同的部分开始-->
+<div class="publish_footer">
+    <div class="inner clearfix">
+        <ul>
+            <li class="focusOn">
+                <div class="left">
+                    <img src="img/main/footer_share.jpg"/>
+                </div>
+                <div class="right">
+                    <p class="title">关注我们</p>
+                    <p class="desc">最受欢迎的阅读产品</p>
+                    <p class="subtitle">关注我们:</p>
+                    <ul class="shareLink">
+                        <li id="footWeiBoShare">
+                            <a href="http://weibo.com/dangdangread" target="_blank">
+                                <i class="icon weibo"></i>
+                                <span>新浪微博</span>
+                            </a>
+                        </li>
+                        <li id="footWeixinShare">
+                            <i class="icon weixin"></i>
+                            <span>官方微信</span>
+                            <img class="pWeixin" src="img/main/weixin.png"/>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="focusOn">
+                <div class="left">
+                    <img src="img/main/footer_author.jpg"/>
+                </div>
+                <div class="right">
+                    <p class="title">作者后台</p>
+                    <p class="desc">加入书城原创网</p>
+                    <p class="subtitle">福利，成就网文大神</p>
+                    <ul class="joinUs">
+
+                    </ul>
+                </div>
+            </li>
+            <li class="focusOn">
+                <div class="left">
+                    <img src="img/main/footer_us.jpg"/>
+                </div>
+                <div class="right">
+                    <p class="title">关于我们</p>
+                    <p class="desc">欢迎反馈宝贵意见</p>
+                    <p class="subtitle">书城书吧：读书5.0问答</p>
+                    <ul class="contactUs">
+
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<!--public Footer结束-->
+<div class="footer">
+    <p class="copyRight">Copyright (C) 华东交大杨燃 2014-2017, All Rights Reserved</p>
+    <p >京ICP证041189号 &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出版物经营许可证 新出发京批字第直0673号</p>
+    <p>本人收录的免费小说作品、频道内容、书友评论、用户上传文字、图片等其他一切内容均属个人行为，与任何网站或个人无关。</p>
+</div>
+<!--底部和index相同的部分结束-->
+
+
+<!--//返回顶部的按钮-->
+<img class="totop" src="img/classification/totop.png"/>
+
+</body>
+<script src="js/jquery-1.7.2.js"></script>
+<script src="js/classification.js"></script>
+<script>
+    (function(){
+        //点击searchBtn
+        $('.searchBtn').click(function(){
+            var keywords=$('.searchText').val();
+            if(keywords){
+                console.log(keywords);
+                location.href="search.php?keywords="+$('.searchText').val()+"";
+
+            }
+        });
+
+
+//        var url= window.location.href;
+       /* console.log(url);
+        //获取？之后的id值
+        var twoParts=url.split('?') ;
+        console.log(twoParts);
+        var value=twoParts[1].split('=')[1];
+        console.log(value);
+
+        //设置当前分类的样式
+        $('.navigation >.left>a').eq(value-1).addClass('a_color').siblings().removeClass('a_color');*/
+
+       /* var first_level=document.getElementsByClassName('first_level')[value-1];
+        first_level.style.backgroundColor="#c8dae6";*/
+
+        //点击左边的列表
+        $('.left>a').click(function(){
+            var self=$(this);
+            console.log(self.index());
+            $(this).addClass('a_color').siblings().removeClass('a_color');
+
+            $.ajax({
+                url:"classification_right.php",
+                type:"get",
+                data:"id="+(self.index()+1)+"",
+                success:function(data){
+                    $('.book_list').html(data);
+                }
+            });
+
+        });
+
+        //点击myOrder
+        $('.myOrder').click(function(){
+            $.ajax({
+                url:"cartfunc.php",
+                type:"post",
+                data:"method=myorder",
+                success:function(data){
+                    console.log(data);
+                    var arr=data.split('&');
+                    if(arr[1]){
+                        alert(arr[1]);
+                    }
+                    location.href=arr[0];
+
+
+                }
+            })
+        });
+        //mycenter
+        $('.myCenter').click(function(){
+            $.ajax({
+                url:"cartfunc.php",
+                type:"post",
+                data:"method=usercenter",
+                success:function(data){
+                    console.log(data);
+                    var arr=data.split('&');
+                    if(arr[1]){
+                        alert(arr[1]);
+                    }
+                    location.href=arr[0];
+
+
+                }
+            })
+        });
+
+
+    })();
+</script>
+</html>

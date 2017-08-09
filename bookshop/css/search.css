@@ -1,0 +1,445 @@
+/*1-头部*/
+#hd{
+    width:1349px;
+    height:35px;
+    background-color:#f9f9f9 ;
+}
+.hd_wrap{
+    width:1200px;
+    height:35px;
+    margin:0 auto;
+    position:relative;
+
+}
+.hd_wrap::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#nickname a{
+    color:red;
+}
+#nickname{
+    width:176px;
+    height:24px;
+}
+.hd_welcome{
+    width:176px;
+    line-height: 24px;
+    padding:5px 0 0 0;
+    font-size: 12px;
+    color:#646464;
+}
+/*hi部分开始*/
+.hi{
+    width:180px;
+    padding-top:7px;
+
+}
+.hi,.hi b{
+    color:red;
+    font-size: 10px;
+
+}
+.hi .out{
+    color:#646464;
+}
+
+/*hi部分结束*/
+/*1-2右边的导航栏*/
+.hd_wrap ul{
+    position:absolute;
+    right:0;
+    top:7px;
+    overflow: hidden;
+
+}
+.hd_wrap ul li{
+    float:left;
+}
+.hd_wrap ul li a{
+    width:60px;
+    height:21px;
+    padding:0 7px 0 8px;
+    border-left:1px solid gray;
+    color:#646464;
+    font-size:12px;
+}
+.hd_wrap ul li>.none{
+    border-left:none;
+}
+.myBookShop{
+    width:82px;
+    position:relative;
+}
+.myBookShop img{
+    position:absolute;
+    top:7px;
+    right:6px;
+}
+.myService{
+    width:74px;
+    position:relative;
+}
+.myService img{
+    position:absolute;
+    top:7px;
+    right:0;
+}
+.hd_wrap ul li :hover{
+    color:red;
+}
+/*二级导航开始*/
+.logo_wrap{
+    width:1200px;
+    padding-top:35px;
+    border-top:1px solid #ebebeb;
+    margin:0 auto;
+}
+.logo{
+    height:48px;
+    width:1200px;
+}
+.logo img{
+    float:left;
+}
+.search{
+    width:558px;
+    height:45px;
+    margin-left:141px ;
+    background: url("../img/main/bg.png") no-repeat;
+    float:left;
+}
+.searchText{
+    color:#687280;
+    background: #fff;
+    width:480px;
+    height:36px;
+    margin:3px 10px 5px 10px;
+    border:0;
+    padding: 0;
+    outline: 0;
+    float:left;
+}
+.searchBtn{
+    width:50px;
+    height:41px;
+    display:inline-block;
+    float:left;
+    cursor: pointer;
+}
+.logo ul{
+    float:right;
+    overflow: hidden;
+    padding-top:15px;
+}
+.logo ul li{
+    float:left;
+    margin-right:10px;
+}
+.logo >ul >li>a{
+    color:#687280;
+}
+.myOrder,.myCenter{
+    color:#687280;
+}
+.logo ul li i{
+    font-size: 20px;
+    color:#7fa3c8;
+    margin-right:3px;
+}
+.logo ul li i:hover{
+    color:#366dc6;
+}
+.logo ul li b{
+    color:red;
+}
+/*三级导航 star*/
+.nav_wrap{
+    width:1200px;
+    margin:0 auto;
+    padding-top: 25px;
+}
+.nav{
+    width:1200px;
+    height:62px;
+    background: url("../img/main/nav-bg.png") no-repeat;
+}
+/*三级导航 end*/
+
+/*中间部分star*/
+.center{
+    width:1200px;
+    margin:0 auto;
+
+}
+.navigation{
+    padding:30px 0 30px 0;
+}
+.classification_list{
+    width:1200px;
+
+}
+
+/*左边内容开始*/
+.right{
+    float:left;
+    width:930px;
+}
+.right_nav{
+    width:932px;
+    height:36px;
+    border-bottom:2px solid #ebebeb;
+
+}
+.book_list{
+    width:932px;
+    padding-top:30px;
+}
+
+.p_num{
+    height:63px;
+    line-height:63px;
+    color:#999999;
+    font-weight: 700;
+}
+.p_num>b{
+    color:#214c90;
+}
+/*第一本书开始*/
+.book_list a{
+    width:310px;
+    float:left;
+    display:block;
+    margin-bottom:39px;
+}
+.book_list span{
+    /* width:114px;
+     height:162px*/;
+    padding:10px 10px 20px;
+    float:left;
+    /*box-shadow: 10px 10px 10px #ddd;*/
+}
+/*.book_list> span> img{
+    width:114px;
+}*/
+.bookCover{
+    float: left;
+    width: 114px;
+    height: 162px;
+    padding: 10px 10px 20px;
+}
+.bookCover>img{
+    width: 114px;
+    height: 162px;
+}
+.bookInfo{
+    float: left;
+    width: 143px;
+    height: 162px;
+    padding: 10px 0;
+}
+.bookInfo .title{
+    height: 40px;
+    overflow: hidden;
+    font-weight: 700;
+    line-height: 20px;
+}
+.bookInfo .author{
+    padding-top: 5px;
+    padding-bottom: 12px;
+    height: 22px;
+    overflow: hidden;
+    word-wrap: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    line-height: 22px;
+    color: #666;
+}
+.starts{
+    height:10px;
+    width:143px;
+}
+.bookInfo .price{
+    font-size: 12px;
+    padding: 5px 0;
+    color: #ccc;
+
+}
+.bookInfo .price span.now{
+    color: #ed3e01;
+    padding-left: 0;
+    text-decoration: none;
+}
+.bookInfo .price span{
+    padding: 0 4px;
+}
+
+.desc{
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+    padding-top: 6px;
+    font-size: 12px;
+    color: #666;
+    word-break: break-all;
+    word-wrap: break-word;
+
+}
+
+/*第一本书结束*/
+
+/*没有更多start*/
+.add_more_end{
+    width: 130px;
+    margin: 20px auto;
+    clear: both;
+    border: 1px solid #d7d7d7;
+    color: #acabab;
+    background-color: #f0f1f1;
+    line-height: 28px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 0;
+    text-decoration: none;
+    font-size: 14px;
+}
+/*没有更多end*/
+
+/*左边内容结束*/
+
+/*右边*/
+.left{
+    float:right;
+}
+
+/*中间部分end*/
+
+
+/*底部相同区域*/
+/*底部开始*/
+.publish_footer{
+    width:1200px;
+    margin:0 auto;
+    padding-top: 26px;
+    border-top:1px solid #ebebeb;
+}
+.inner{
+    width:1200px;
+    height:166px;
+}
+.inner ul .focusOn{
+    width:252px;
+    height:156px;
+    margin-left:92px;
+    float:left;
+}
+.focusOn .left{
+    width:45px;
+    height:40px;
+    padding-right:10px;
+    float:left;
+}
+.focusOn .right{
+    width:126px;
+    height:156px;
+    float:left;
+}
+.right .title{
+    width:126px;
+    color:#000;
+    font-size: 16px;
+}
+.right .desc{
+    height:20px;
+    line-height:20px;
+    color:#666;
+    width:126px;
+    font-size:14px;
+}
+.right .subtitle{
+    height:34px;
+    line-height:34px;
+    font-size:12px;
+    color:#666;
+}
+.shareLink li{
+    height:34px;
+    line-height:34px;
+}
+#footWeiBoShare a{
+    display:inline-block;
+    width:126px;
+    height:34px;
+    color:#666;
+    line-height:34px;
+}
+.weibo{
+    display:inline-block;
+    width:34px;
+    height:34px;
+    margin-right:10px;
+    background: url("../img/main/common.png") no-repeat 0 -336px;
+}
+.weibo:hover{
+    background: url("../img/main/common.png") no-repeat 0 -425px;
+}
+.shareLink li span{
+    float:right;
+    display:inline-block;
+    padding-right:25px;
+    color:#666;
+    font-size: 12px;
+}
+.weixin{
+    display:inline-block;
+    width:34px;
+    height:34px;
+    margin-right:10px;
+    background: url("../img/main/common.png") no-repeat 0 -381px;
+}
+.weixin:hover{
+    background: url("../img/main/common.png") no-repeat 0 -468px;
+}
+#footWeixinShare{
+    position:relative;
+}
+#footWeixinShare img{
+    position:absolute;
+    top:-44px;
+    left:84px;
+    display:none;
+}
+#footWeixinShare:hover .pWeixin{
+    display:block;
+}
+.joinUs{
+    width:126px;
+    height:31px;
+    background: url("../img/main/footer_font.png")no-repeat 0px 5px;
+    margin-top:15px;
+}
+.contactUs{
+    width:126px;
+    height:31px;
+    background: url("../img/main/footer_font.png")no-repeat 0px -24px;
+    margin-top:15px;
+}
+/*最后的一部分footer*/
+.footer{
+    width:1200px;
+    height:78px;
+    padding:15px 0 60px 0;
+    margin:0 auto;
+    border-top:1px solid #ebebeb;
+
+}
+.footer p{
+    text-align: center;
+    color:#666;
+    height:26px;
+    line-height:26px;
+    font-size:12px;
+}
+/*最后的一部分footer结束*/

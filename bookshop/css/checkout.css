@@ -1,0 +1,245 @@
+/*<!--头部相同的部分开始-->*/
+/*1-头部*/
+
+*{
+    padding:0;
+    margin:0;
+    list-style: none;
+    text-decoration: none;
+}
+.clearfix:after{
+display:block;
+clear: both;
+content:"";
+}
+.clear{
+overflow: hidden;
+}
+body{
+background-color: white;
+}
+
+#hd{
+    width:1349px;
+    height:35px;
+    background-color:#f9f9f9 ;
+}
+.hd_wrap{
+    width:1200px;
+    height:35px;
+    margin:0 auto;
+    position:relative;
+
+}
+.hd_wrap::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#nickname a{
+    color:red;
+}
+#nickname{
+    width:176px;
+    height:24px;
+}
+.hd_welcome{
+    width:176px;
+    line-height: 24px;
+    padding:5px 0 0 0;
+    font-size: 12px;
+    color:#646464;
+}
+/*hi部分开始*/
+.hi{
+    width:180px;
+    padding-top:7px;
+
+}
+.hi,.hi b{
+    color:red;
+    font-size: 10px;
+
+}
+.hi .out{
+    color:#646464;
+}
+
+/*hi部分结束*/
+
+/*hi部分结束*/
+/*1-2右边的导航栏*/
+.hd_wrap ul{
+    position:absolute;
+    right:0;
+    top:7px;
+    overflow: hidden;
+
+}
+.hd_wrap ul li{
+    float:left;
+}
+.hd_wrap ul li a{
+    width:60px;
+    height:21px;
+    padding:0 7px 0 8px;
+    border-left:1px solid gray;
+    color:#646464;
+    font-size:12px;
+}
+.hd_wrap ul li>.none{
+    border-left:none;
+}
+.myBookShop{
+    width:82px;
+    position:relative;
+}
+.myBookShop img{
+    position:absolute;
+    top:7px;
+    right:6px;
+}
+.myService{
+    width:74px;
+    position:relative;
+}
+.myService img{
+    position:absolute;
+    top:7px;
+    right:0;
+}
+.hd_wrap ul li :hover{
+    color:red;
+}
+
+/*<!--头部相同的部分结束-->*/
+
+.shoppingcar_wrap{
+    width: 960px;
+    margin: 0 auto;
+    padding: 17px 0 0;
+}
+.shoppingcar_wrap a{
+    display:block;
+    width:960px;
+    height:50px;
+    background: url("../img/shoppingcar/href.jpg") no-repeat;
+}
+
+/*login_line start*/
+.w960{
+    width:960px;
+    margin:0 auto;
+}
+.procedure{
+    float: right;
+    width: 634px;
+    height: 36px;
+    background: url(../img/shoppingcar/procedure2.png)  no-repeat;
+    font: bold 14px/36px "Microsoft Yahei";
+    color: #646464;
+    margin: 30px 0 0;
+}
+.procedure .current{
+    color: #646464;
+    width: 206px;
+}
+.procedure span{
+    text-align: center;
+    display:inline-block;
+}
+/*.my_car{
+    width:206px;
+    background: url("../img/shoppingcar/span.png") no-repeat;
+}*/
+.w_order{
+    color:white;
+}
+.w_order,.f_order{
+    width:209px;
+
+}
+.w960 .logo{
+    width:250px;
+    float:left;
+    display: block;
+    padding-top:20px;
+}
+.logo_line{
+    border-bottom: 4px solid #ff2832;
+    width:100%;
+    height:104px;
+}
+
+/*login_line end*/
+
+/*order_list star*/
+.order_list{
+    padding-top:20px;
+    padding-bottom: 20px;
+}
+.order_list>span{
+    float:left;
+    font-weight: 700;
+}
+.order_list>a{
+    display:block;
+    width:100px;
+    color:#1a66b3;
+    font-size: 12px;
+    float:right;
+}
+/*order_list end*/
+
+/*form_container start*/
+.form_container{
+    border:1px solid #dcdcdc;
+}
+.form_container>.left{
+    padding: 18px 16px;
+    width: 289px;
+    float: left;
+}
+.form_container>.left>p{
+    padding: 6px 0;
+    position: relative;
+    color:#323232;
+    font-size: 12px;
+}
+form{
+    float:left;
+}
+form>h6{
+    height:38px;
+    line-height:38px;
+    font-size: 14px;
+    background-color: #ececec;
+}
+td{
+    text-align: center;
+}
+td>input{
+    width:200px;
+    height:25px;
+    outline:0 none;
+}
+
+
+/*form_container end*/
+.div_last{
+    height:60px;
+    background-color: #f1f5f8;
+}
+#footer_top{
+    border-top:2px solid red;
+}
+
+.left>#yjgm_sum{
+    padding-top:50px;
+    text-align: center;
+
+}
+.left>#yjgm_sum>span{
+    color:red;
+    font-size: 16px;
+}
